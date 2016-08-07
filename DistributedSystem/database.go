@@ -17,7 +17,12 @@ type database struct {
 }
 
 /* constructor */
-func newDatabase(data int, state string) *database{
-  database := &database{Data: data, State: state, IsLocked: false, IsCurrent: true}
+func newDatabase(data int) *database{
+  database := &database{ Data: data,
+                         ChangeData: 0,
+                         State: "init",
+                         IsLocked: false,
+                         IsCurrent: true,
+                         IsChange: false }
   return database
 }
